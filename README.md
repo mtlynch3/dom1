@@ -1,3 +1,6 @@
+#Melissa and Such 
+#Assignment 3
+
 1) Select the section with an id of container without using querySelector.
 2) Select the section with an id of container using querySelector.
 3) Select all of the list items with a class of "second".
