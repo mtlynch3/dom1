@@ -1,5 +1,4 @@
-#Melissa and Such 
-#Assignment 3
+Melissa and Such Assignment 3
 
 1) Select the section with an id of container without using querySelector.
 2) Select the section with an id of container using querySelector.
