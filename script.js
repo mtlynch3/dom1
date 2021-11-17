@@ -1,38 +1,69 @@
-// 1 - Select the section with an id of container without using querySelector.
-console.log(document.getElementById("container"));
 
-//2 - Select the section with an id of container using querySelector.
-console.log(document.querySelector("#container")); 
+// let h1 = document.querySelector('h1'); //first h1 tag in html file
+// console.log(h1); //<h1>Hello</h1>
+// console.log(h1.parentElement); // body tag
+// console.log(h1.children); //children: only returns element nodes
+//         // emptyList
+// console.log(h1.childNodes); //text node "Hello"
 
-//3 Select all of the list items with a class of "second".
-console.log(document.querySelectorAll(".second"));
+// let ul = document.querySelector('ul');
+// console.log(ul.children); //list items one, two , three
+// console.log(ul.lastElementChild.nodeType); //1-element
+// //chilren and childNodes returns a NodeList
+// //this is an array-like object
+// console.log(ul.lastElementChild.childNodes[0].nodeType); //3- text node
 
-//4 Select a list item with a class of third, but only the list item inside of the ol tag.
-console.log(document.querySelector("ol .third"));
+// // // Select the section with an id of container without using querySelector.
+// console.log(document.getElementById("container"));
 
-//5 Give the section with an id of container the text "Hello!".
-// document.getElementById("container").innerHTML = "Hello!";
+// // // Select the section with an id of container using querySelector.
+// console.log(document.querySelector("#container")); 
 
-//6 Add the class main to the div with a class of footer.
-document.querySelector('.footer').classList.add('main');
+// document.querySelector('#bye'); //<h1>Goodbye</h1>
 
-//7 Remove the class main on the div with a class of footer.
-document.querySelector(".footer").classList.remove('main');
+// // // Select all of the nodes in document with a class of "second".
+// //returns a NodeList
+// //<li class="second"> from ul, <li...> from ol]
+// console.log(document.querySelectorAll(".second"));
 
-//8 Create a new li element.
-var x = document.createElement("LI");
+// // // Select a list item with a class of third, but only the list item inside of the ol tag.
+// console.log(document.querySelector("ol .third"));
 
-//9 Give the li the text "four".
-var t = document.createTextNode("four");
-x.appendChild(t);
+// // // Give the section with an id of container the text "Hello!".
+// document.getElementById("container").innerHTML = "<h3>hello</h3>";
 
-//10 Append the li to the ul element.
-document.querySelector("ul").appendChild(x);
+// // Add the class main to the div with a class of footer.
+// document.querySelector('.footer').classList.add('main');
 
-//11 Loop over all of the lis inside the ol tag and give them a background color of "green".
-for( let i = 0; i < 3; i++){
-    document.querySelectorAll("ol li")[i].style.backgroundColor = "green";
+// // Remove the class main on the div with a class of footer.
+// document.querySelector(".footer").classList.remove('main');
+
+// Create a new li element.
+let li = document.createElement("li");
+//<li></li>
+// Give the li the text "four".
+let txt = document.createTextNode("four");
+//four
+li.appendChild(txt);
+//li = <li>four</li>
+
+//Append the li to the ol element.
+//document.querySelector("ol").appendChild(li);
+
+// Loop over all of the li's inside the ol tag and give them a background color of "pink".
+for(let i = 0; i < 3; i++) {
+  document.querySelectorAll("ol li")[i].style.backgroundColor = "pink";
 }
-//12 Remove the div with a class of footer.
-document.querySelector(".footer").remove();
+let ol = document.querySelector("ol");
+ol.style.backgroundColor = "magenta";
+
+
+// Remove the first item in the ol
+let olLastItem = ol.lastElementChild;
+ol.removeChild(olLastItem);
+
+// onlick functionality
+ol.onclick = function (){
+  this.style.backgroundColor = "red";
+};
 
